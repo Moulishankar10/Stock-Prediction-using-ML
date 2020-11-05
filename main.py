@@ -51,9 +51,9 @@ print(f"The Predicted Quantity Sold of {input_product} on {input_month} -->> {fl
 
 #To visualise the accuracy
 
-
+"""
 plt.plot(data["Month"],y,color = "red")
 plt.plot(data["Month"],mod.predict(model.fit_transform(x)),color = "blue")
 plt.show()
-
+"""
 
