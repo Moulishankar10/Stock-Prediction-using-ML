@@ -50,8 +50,6 @@ regressor.fit(x, y)
 
 res = sc_y.inverse_transform(regressor.predict(sc_x.transform([[x_pred]])))
 
-res = mod.predict(model.fit_transform([[x_pred]]))
-
 
 print(f"\nThe Predicted Quantity of {input_product} to be sold on {input_month} -->> {round(float(res))}")
 
