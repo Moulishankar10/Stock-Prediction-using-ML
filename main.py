@@ -40,12 +40,19 @@ y = data[input_product].values
 y = np.array(y,dtype=int)
 y = y.reshape(len(y),1)
 
-model = PolynomialFeatures(degree = 4)
-model_x = model.fit_transform(x)
-mod = LinearRegression()
-mod.fit(model_x,y)
+sc_x = StandardScaler()
+sc_y = StandardScaler()
+x = sc_x.fit_transform(x)
+y = sc_y.fit_transform(y)
+
+regressor = SVR(kernel = 'rbf')
+regressor.fit(x, y)
+
+res = sc_y.inverse_transform(regressor.predict(sc_x.transform([[x_pred]])))
 
 res = mod.predict(model.fit_transform([[x_pred]]))
+
+
 print(f"\nThe Predicted Quantity of {input_product} to be sold on {input_month} -->> {round(float(res))}")
 
 
