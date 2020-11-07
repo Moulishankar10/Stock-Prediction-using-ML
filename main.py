@@ -16,9 +16,9 @@ from sklearn.linear_model import LinearRegression
 
 data = pd.read_csv("data/Quantity Sold.csv")
 
-print("Enter the following details as you what you want to predict!")
-input_month = input("Enter the time period (MM-YYYY) : ")
-input_product = input("Enter the product : ").upper()
+print("\nEnter the following details as what you want to predict!")
+input_month = input("\nEnter the time period (MM-YYYY) : ")
+input_product = input("\nEnter the product : ").upper()
 
 x = []
 initial_str = data["Month"][0]
@@ -46,7 +46,7 @@ mod = LinearRegression()
 mod.fit(model_x,y)
 
 res = mod.predict(model.fit_transform([[x_pred]]))
-print(f"The Predicted Quantity Sold of {input_product} on {input_month} -->> {float(res)}")
+print(f"\nThe Predicted Quantity Sold of {input_product} on {input_month} -->> {float(res)}")
 
 
 #To visualise the accuracy
