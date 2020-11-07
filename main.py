@@ -46,7 +46,7 @@ mod = LinearRegression()
 mod.fit(model_x,y)
 
 res = mod.predict(model.fit_transform([[x_pred]]))
-print(f"\nThe Predicted Quantity Sold of {input_product} on {input_month} -->> {float(res)}")
+print(f"\nThe Predicted Quantity of {input_product} to be sold on {input_month} -->> {round(float(res))}")
 
 
 #To visualise the accuracy
