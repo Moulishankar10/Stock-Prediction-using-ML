@@ -57,8 +57,15 @@ print(f"\nThe Predicted Quantity of {input_product} to be sold on {input_month} 
 #To visualise the accuracy
 
 """
-plt.plot(data["Month"],y,color = "red")
-plt.plot(data["Month"],mod.predict(model.fit_transform(x)),color = "blue")
+x_grid = np.arange(min(sc_x.inverse_transform(x)), max(sc_x.inverse_transform(x)), 0.1)
+x_grid = x_grid.reshape((len(x_grid), 1))
+plt.plot(sc_x.inverse_transform(x), sc_y.inverse_transform(y), color = 'red')
+plt.plot(x_grid, sc_y.inverse_transform(regressor.predict(sc_x.transform(x_grid))), color = 'blue')
+plt.scatter(x_pred, res, color='green')
+#plt.title('Truth or Bluff (SVR)')
+#plt.xlabel('Position level')
+#plt.ylabel('Salary')
 plt.show()
+
 """
 
