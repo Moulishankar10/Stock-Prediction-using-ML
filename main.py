@@ -50,6 +50,7 @@ y = sc_y.fit_transform(y)
 regressor = SVR(kernel = 'rbf')
 regressor.fit(x, y)
 
+# PREDICTING THE MODEL
 res = sc_y.inverse_transform(regressor.predict(sc_x.transform([[x_pred]])))
 
 
