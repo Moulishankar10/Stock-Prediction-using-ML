@@ -15,7 +15,7 @@ from sklearn.svm import SVR
 # IMPORTING DATA
 data = pd.read_csv("data/Quantity Sold.csv")
 
-# INPUT
+# INPUT DATA
 print("\nEnter the following details as what you want to predict!")
 input_month = input("\nEnter the time period (MM-YYYY) : ")
 input_product = input("\nEnter the product : ").upper()
