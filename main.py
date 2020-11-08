@@ -20,6 +20,7 @@ print("\nEnter the following details as what you want to predict!")
 input_month = input("\nEnter the time period (MM-YYYY) : ")
 input_product = input("\nEnter the product : ").upper()
 
+# PREPROCESSING DATA
 x = []
 initial_str = data["Month"][0]
 initial = dt.datetime(int(initial_str[-4:]),int(initial_str[:2]),1)
@@ -45,6 +46,7 @@ sc_y = StandardScaler()
 x = sc_x.fit_transform(x)
 y = sc_y.fit_transform(y)
 
+# FITTING MODEL
 regressor = SVR(kernel = 'rbf')
 regressor.fit(x, y)
 
