@@ -8,4 +8,7 @@ An ML algorithm which predicts the number of quantity of a product to be sold on
 
 [Vigneshwar Ravichandar](https://github.com/ToastCoder)
 
-[ Under Development ]
+### Development Status
+
+Under Development 
+
