@@ -62,9 +62,6 @@ x_grid = x_grid.reshape((len(x_grid), 1))
 plt.plot(sc_x.inverse_transform(x), sc_y.inverse_transform(y), color = 'red')
 plt.plot(x_grid, sc_y.inverse_transform(regressor.predict(sc_x.transform(x_grid))), color = 'blue')
 plt.scatter(x_pred, res, color='green')
-#plt.title('Truth or Bluff (SVR)')
-#plt.xlabel('Position level')
-#plt.ylabel('Salary')
 plt.show()
 
 """
