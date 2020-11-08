@@ -50,14 +50,14 @@ y = sc_y.fit_transform(y)
 regressor = SVR(kernel = 'rbf')
 regressor.fit(x, y)
 
-# PREDICTING THE MODEL
+# PREDICTING MODEL
 res = sc_y.inverse_transform(regressor.predict(sc_x.transform([[x_pred]])))
 
-
+# DISPLAYING RESULTS
 print(f"\nThe Predicted Quantity of {input_product} to be sold on {input_month} -->> {round(float(res))}")
 
 
-#To visualise the accuracy
+#TO VISUALISE THE ACCURACY
 
 """
 x_grid = np.arange(min(sc_x.inverse_transform(x)), max(sc_x.inverse_transform(x)), 0.1)
