@@ -1,4 +1,5 @@
 #!/bin/sh
+# Author : MOULISHANKAR M R
 
 echo " "
 echo "requirements.sh prompts you to install the modules required for this program!"
