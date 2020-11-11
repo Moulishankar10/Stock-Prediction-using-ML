@@ -57,7 +57,7 @@ def mlmodel():
 
     # DISPLAYING RESULTS
     print(f"\nThe Predicted Quantity of {input_product} to be sold on {input_month} -->> {round(float(res))}")
-
+    print("\nAccuracy : ",regressor.score(x,y))
 
     #TO VISUALISE THE ACCURACY
 
