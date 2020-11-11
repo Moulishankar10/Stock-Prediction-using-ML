@@ -97,7 +97,8 @@ opt = int(input("\nYOUR OPTION : "))
 if opt == 1:
      print("\nNOW YOU WILL BE REDIRECTED TO 'requirements.bat'")
      os.system('./requirements.bat')
-     
+     mlmodel()
+
 if opt == 2:
     print("\nNOW YOU WILL BE REDIRECTED TO 'requirements.sh'")
     os.system('bash requirements.sh')
