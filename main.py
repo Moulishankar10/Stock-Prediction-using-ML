@@ -44,7 +44,7 @@ def mlmodel():
     y = y.reshape(len(y),1)
 
     # FITTING MODEL
-    regressor = RandomForestRegressor(n_estimators = 10, random_state = 0)
+    regressor = RandomForestRegressor(n_estimators = 1000, random_state = 0)
     regressor.fit(x, y)
 
     # PREDICTING MODEL
@@ -59,7 +59,7 @@ def mlmodel():
     ## ACCURACY SCORE PREDICTION
     print("\nAccuracy : ",regressor.score(x,y))
 
-    """
+    
     ## GRAPHICAL VISUALISATION
     x_grid = np.arange(min(x), max(x), 0.01)
     x_grid = x_grid.reshape((len(x_grid), 1))
@@ -67,7 +67,7 @@ def mlmodel():
     plt.plot(x_grid, regressor.predict(x_grid), color = 'blue')
     plt.scatter(x_pred, res, color='green')
     plt.show()
-    """
+    
 
 print(
     '''
