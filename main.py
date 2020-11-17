@@ -44,7 +44,7 @@ def mlmodel():
     y = y.reshape(len(y),1)
 
     # FITTING MODEL
-    regressor = RandomForestRegressor(n_estimators = 10, random_state = 0)
+    regressor = RandomForestRegressor(n_estimators = 20, random_state = 0)
     regressor.fit(x, y)
 
     # PREDICTING MODEL
