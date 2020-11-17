@@ -1,3 +1,5 @@
+# Author : MOULISHANKAR M R
+
 echo " "
 echo "requirements.bat prompts you to install the modules required for this program!"
 echo " "
