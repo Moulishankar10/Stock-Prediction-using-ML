@@ -10,8 +10,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime as dt
-from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVR
+# from sklearn.preprocessing import StandardScaler
+# from sklearn.svm import SVR
+from sklearn.ensemble import RandomForestRegressor
+
 
 def mlmodel():
     # IMPORTING DATA
@@ -43,6 +45,8 @@ def mlmodel():
     y = np.array(y,dtype=int)
     y = y.reshape(len(y),1)
 
+    """
+    ```````````````````````````````SVR`````````````````````````````````
     sc_x = StandardScaler()
     sc_y = StandardScaler()
     x = sc_x.fit_transform(x)
@@ -51,10 +55,21 @@ def mlmodel():
     # FITTING MODEL
     regressor = SVR(kernel = 'rbf')
     regressor.fit(x, y)
+    ``````````````````````````````````````````````````````````````````````
+    """
 
+    regressor = RandomForestRegressor(n_estimators = 10, random_state = 0)
+    regressor.fit(x, y)
+
+    """
+    `````````````````````````````SVR````````````````````````````````
     # PREDICTING MODEL
     res = sc_y.inverse_transform(regressor.predict(sc_x.transform([[x_pred]])))
+    `````````````````````````````````````````````````````````````
+    """
 
+    res = regressor.predict([[x_pred]])
+    
     # DISPLAYING RESULTS
     print(f"\nThe Predicted Quantity of {input_product} to be sold on {input_month} -->> {round(float(res))}")
     print("\nAccuracy : ",regressor.score(x,y))
@@ -62,14 +77,22 @@ def mlmodel():
     #TO VISUALISE THE ACCURACY
 
     """
+    ``````````````````````````````SVR`````````````````````````````
     x_grid = np.arange(min(sc_x.inverse_transform(x)), max(sc_x.inverse_transform(x)), 0.1)
     x_grid = x_grid.reshape((len(x_grid), 1))
     plt.plot(sc_x.inverse_transform(x), sc_y.inverse_transform(y), color = 'red')
     plt.plot(x_grid, sc_y.inverse_transform(regressor.predict(sc_x.transform(x_grid))), color = 'blue')
     plt.scatter(x_pred, res, color='green')
     plt.show()
-
+    `````````````````````````````````````````````````````````````````````
     """
+
+    x_grid = np.arange(min(x), max(x), 0.01)
+    x_grid = x_grid.reshape((len(x_grid), 1))
+    plt.plot(x, y, color = 'red')
+    plt.plot(x_grid, regressor.predict(x_grid), color = 'blue')
+    plt.show()
+    
 
 print(
     '''
