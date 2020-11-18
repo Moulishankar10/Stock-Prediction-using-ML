@@ -2,7 +2,7 @@
 # Author : MOULISHANKAR M R
 
 echo " "
-echo "requirements.sh prompts you to install the modules required for this program!"
+echo " Checking the Required Dependencies ! "
 echo " "
 sudo apt install python3-pip -y 
 pip3 install numpy
