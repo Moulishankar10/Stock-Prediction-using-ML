@@ -74,30 +74,6 @@ print(
 
                      WELCOME TO STOCK PREDICTION PROGRAM !
 
-            FOR BEING COMFORTABLE WITH THIS PROGRAM, PLEASE PROVIDE 
-                      
-                           THE FOLLOWING DETAILS
-
-
 ''')
 
-print('''\n 
-                        WHAT IS YOUR OPERATING SYSTEM ?
-
-                              1. WINDOWS
-
-                              2. LINUX / MAC OS
-
-''')
-
-opt = int(input("\nYOUR OPTION : "))
-
-if opt == 1:
-     print("\nNOW YOU WILL BE REDIRECTED TO 'requirements.bat'")
-     os.system('./requirements.bat')
-     mlmodel()
-
-if opt == 2:
-    print("\nNOW YOU WILL BE REDIRECTED TO 'requirements.sh'")
-    os.system('bash requirements.sh')
-    mlmodel()
+mlmodel()
