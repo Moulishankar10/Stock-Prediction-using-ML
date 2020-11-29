@@ -57,7 +57,7 @@ def mlmodel():
     # TO VISUALISE THE ACCURACY
     
     ## ACCURACY SCORE PREDICTION
-    print(f"\nAccuracy : {round(regressor.score(x,y)*100,4)}%")
+    print(f"\nAccuracy : {round(regressor.score(x,y)*100,2)}%")
 
     
     ## GRAPHICAL VISUALISATION
