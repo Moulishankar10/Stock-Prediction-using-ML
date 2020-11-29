@@ -53,11 +53,11 @@ def mlmodel():
     # DISPLAYING RESULTS
     print(f"\nThe Predicted Quantity of {input_product} to be sold on {input_month} -->> {round(float(res))}")
     
-    """
+    
     # TO VISUALISE THE ACCURACY
     
     ## ACCURACY SCORE PREDICTION
-    print("\nAccuracy : ",regressor.score(x,y))
+    print("\nAccuracy : ",regressor.score(x,y)*100)
 
     
     ## GRAPHICAL VISUALISATION
@@ -67,7 +67,7 @@ def mlmodel():
     plt.plot(x_grid, regressor.predict(x_grid), color = 'blue')
     plt.scatter(x_pred, res, color='green')
     plt.show()
-    """
+    
 
 print(
     '''
