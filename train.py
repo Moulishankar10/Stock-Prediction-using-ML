@@ -53,8 +53,26 @@ model.add(Dense(1, activation = 'linear'))
 
 model.compile(loss = 'mse', optimizer = 'adam', metrics = ['mse', 'mae', 'accuracy'])
 history = model.fit(xtrain_scaled, ytrain_scaled, epochs = 100, batch_size = 100, validation_split = 0.1, verbose = 1)
+print("\n\n ----- Model is trained successfully ! ----- \n\n")
 
+print(history.history.keys())
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'validation'], loc='upper left')
+plt.show()
 
+ypred_scaled = model.predict(xval_scaled)
+y_pred = scaler_y.inverse_transform(ypred_scaled)
+acc_score = r2_score(y_val, y_pred)
+print(f"\nAccuracy of the model : {round(acc_score*100,2)}%")
+
+# SAVING THE MODEL
+PATH = './model/model_stock'
+save_model(model,PATH)
+print(f"\n\n ---- Successfully stored the trained model at {PATH} ---- \n\n")
 
 
 
